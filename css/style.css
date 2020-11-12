@@ -1,0 +1,58 @@
+@import 'base.css';
+@import 'orbit.css';
+@import 'sun.css';
+@import 'arrow.css';
+@import 'needle.css';
+@import 'points.css';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+svg {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+}
+
+body {
+	user-select: none;
+	font-size: 8rem;
+	text-align: center;
+	overflow: hidden;
+}
+
+line {
+	stroke: black;
+	stroke-width: 2px;
+}
+
+/*************** STYLE ELEMENTS ***************/
+
+/* GENERAL STYLES */
+#base, #orbit, #sun, #sun2, #arrow, #containerA, #containerB {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* COLORS */
+:root {
+	/* blue */
+	--base-color: rgb(248, 249, 254);
+	--light-blue: rgb(176, 222, 248);
+	--king-blue: rgb(7, 87, 146);
+	/* grey */
+	--light-grey: rgb(205, 217, 229);
+	--dark-grey: rgb(60, 68, 104);
+}

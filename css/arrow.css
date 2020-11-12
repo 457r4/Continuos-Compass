@@ -1,0 +1,117 @@
+/* Arrow Container Style */
+
+#arrow {
+	animation-name: arrow;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes arrow {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(-180deg);
+	}
+}
+
+/* Arrow Tips */
+#arrowTipF, #arrowTipB {
+	position: absolute;
+	display: inline-block;
+	left: 0;
+}
+
+#arrowTipFBase, #arrowTipBBase {
+	position: absolute;
+	background-color: var(--light-grey);
+	height: 100%;
+	width: 100%;
+	animation-name: arrowTipBaseColor;
+	animation-duration: 5s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+}
+
+@keyframes arrowTipBaseColor {
+	50% {
+		background-color: var(--dark-grey);
+	}
+	100% {
+		background-color: var(--light-grey);
+	}
+}
+
+
+#arrowTipFUp, #arrowTipBUp {
+	position: absolute;
+	background-color: var(--dark-grey);
+	height: 100%;
+	width: 100%;
+	animation-name: arrowTipUpColor;
+	animation-duration: 5s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+}
+
+@keyframes arrowTipUpColor {
+	100% {
+		background-color: var(--light-grey);
+	}
+}
+
+#arrowTipFDown, #arrowTipBDown {
+	position: absolute;
+	background-color: var(--light-grey);
+	height: 100%;
+	width: 100%;
+	animation-name: arrowTipDownColor;
+	animation-duration: 5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+@keyframes arrowTipDownColor {
+	100% {
+		background-color: var(--dark-grey);
+	}
+}
+
+#arrowTipFBase {
+	clip-path: polygon(75% 50%, 100% 100%, 100% 0);
+}
+
+#arrowTipFUp {
+	clip-path: polygon(75% 50%, 0 50%, 100% 100%);
+}
+
+#arrowTipFDown {
+	clip-path: polygon(75% 50%, 0 50%, 100% 0);
+}
+
+#arrowTipBBase {
+	clip-path: polygon(25% 50%, 0 0, 0 100%);
+}
+
+#arrowTipBUp {
+	clip-path: polygon(25% 50%, 0 100%, 100% 50%);
+}
+
+#arrowTipBDown {
+	clip-path: polygon(25% 50%, 0 0, 100% 50%);
+}
+
+#join {
+	position: absolute;
+	height: 2px;
+	width: 95%;
+	background-color: black;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#arrowTipF svg line:nth-child(3), #arrowTipB svg line:nth-child(3) {
+	stroke-width: 4px;
+}

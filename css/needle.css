@@ -1,0 +1,189 @@
+/* Needle Container Style */
+
+#needle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.needleA {
+	animation: 35s linear 0s infinite alternate needleA;
+}
+
+.needleB {
+	animation: 35s linear 0s infinite alternate needleB;
+}
+
+@keyframes needleA {
+	from {
+		transform: translate(-50%, -50%) rotate(-90deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(1710deg);
+	}
+}
+
+@keyframes needleB {
+	from {
+		transform: translate(-50%, -50%) rotate(-90deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(1710deg);
+	}
+}
+
+#needle > div {
+	position: absolute;
+	display: inline-block;
+}
+
+#nock {
+	left: 0;
+}
+
+#straight {
+	height: 2px;
+	width: 95%;
+	background-color: black;
+	top: 50%;
+	left: -5%;
+	transform: translateY(-50%);
+}
+
+#arrowTipBase, #arrowTipUp, #arrowTipDown {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	animation-duration: 7s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+}
+
+#arrowTipBase {
+	background-color: var(--dark-grey);
+	animation-name: ArrowTipBaseColor;
+}
+
+@keyframes ArrowTipBaseColor {
+	50% {
+		background-color: var(--light-grey);
+	}
+	75% {
+		background-color: var(--dark-grey);
+	}
+}
+
+#arrowTipUp {
+	background-color: var(--light-grey);
+}
+
+#arrowTipDown {
+	background-color: var(--dark-grey);
+}
+
+#arrowTipBase {
+	clip-path: polygon(25% 50%, 0 0, 0 100%);
+}
+
+#arrowTipUp {
+	clip-path: polygon(25% 50%, 0 100%, 100% 50%);
+}
+
+#arrowTipDown {
+	clip-path: polygon(25% 50%, 0 0, 100% 50%);
+}
+
+#nock svg line:nth-child(3), #nock svg line:nth-child(6), #triangle svg line:nth-child(1), #arrowTip svg line:nth-child(3) {
+	stroke-width: 4px;
+}
+
+#triangle div {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	clip-path: polygon(0 100%, 0 0, 100% 50%);
+	background-color: rgb(248, 249, 254);
+}
+
+#U1, #U2, #U3, #U4, #U5, #D1, #D2, #D3, #D4, #D5 {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+#U1 {
+	background-color: var(--king-blue);
+	clip-path: polygon(15% 50%, 0 100%, 12.75% 100%, 25.75% 50%);
+}
+
+#U2 {
+	background-color: var(--light-blue);
+	clip-path: polygon(25.75% 50%, 12.75% 100%, 25.5% 100%, 38.25% 50%);
+}
+
+#U3 {
+	background-color: var(--light-grey);
+	clip-path: polygon(38.25% 50%, 25.5% 100%, 61.75% 100%, 74.5% 50%);
+}
+
+#U4 {
+	background-color: var(--king-blue);
+	clip-path: polygon(74.5% 50%, 61.75% 100%, 74.5% 100%, 87.25% 50%);
+}
+
+#U5 {
+	background-color: var(--light-blue);
+	clip-path: polygon(87.25% 50%, 74.5% 100%, 85% 100%, 100% 50%);
+}
+
+#D1 {
+	background-color: var(--light-blue);
+	clip-path: polygon(0 0, 15% 50%, 25.75% 50%, 12.75% 0);
+}
+
+#D2 {
+	background-color: var(--king-blue);
+	clip-path: polygon(12.75% 0, 25.75% 50%, 38.25% 50%, 25.5% 0);
+}
+
+#D3 {
+	background-color: var(--light-blue);
+	clip-path: polygon(25.5% 0, 38.25% 50%, 74.5% 50%, 61.75% 0);
+}
+
+#D4 {
+	background-color: var(--light-blue);
+	clip-path: polygon(61.75% 0, 74.5% 50%, 87.25% 50%, 74.5% 0);
+}
+
+#D5 {
+	background-color: var(--light-grey);
+	clip-path: polygon(74.5% 0, 87.25% 50%, 100% 50%, 85% 0);
+}
+
+.clearer {
+	animation: 7s ease-in infinite clearer;
+}
+
+@keyframes clearer {
+	25% {
+		background-color: var(--dark-grey);
+	}
+	75% {
+		background-color: var(--light-grey);
+	}
+}
+
+.darker {
+	animation: 7s ease-in infinite darker;
+}
+
+@keyframes darker {
+	25% {
+		background-color: var(--light-grey);
+	}
+	50% {
+		background-color: var(--dark-grey);
+	}
+}

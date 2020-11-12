@@ -1,0 +1,20 @@
+/* Circle Orbit Style */
+
+#orbit {
+	border: 2px solid var(--king-blue);
+	border-radius: 50%;
+	border-style: dashed;
+	animation-name: classicOrbit;
+	animation-duration: 60s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes classicOrbit {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(360deg)
+	}
+}

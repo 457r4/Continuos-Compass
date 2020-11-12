@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Compass</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<!-- HTML contains just the structure and spaces where animation will be drawn -->
+
+	<div id="base"></div>
+	<div id="orbit"></div>
+	<div id="arrow">
+		<div id="join"></div>
+		<div id="arrowTipF">
+			<div id="arrowTipFBase"></div>
+			<div id="arrowTipFUp"></div>
+			<div id="arrowTipFDown"></div>
+			<svg>
+				<line x1="100%" y1="0" x2="0" y2="50%"></line>
+				<line x1="0" y1="50%" x2="100%" y2="100%"></line>
+				<line x1="100%" y1="100%" x2="100%" y2="0"></line>
+				<line x1="0" y1="50%" x2="75%" y2="50%"></line>
+				<line x1="75%" y1="50%" x2="100%" y2="100%"></line>
+				<line x1="75%" y1="50%" x2="100%" y2="0"></line>
+			</svg>
+		</div>
+		<div id="arrowTipB">
+			<div id="arrowTipBBase"></div>
+			<div id="arrowTipBUp"></div>
+			<div id="arrowTipBDown"></div>
+			<svg>
+				<line x1="0" y1="0" x2="100%" y2="50%"></line>
+				<line x1="100%" y1="50%" x2="0" y2="100%"></line>
+				<line x1="0" y1="100%" x2="0" y2="0"></line>
+				<line x1="100%" y1="50%" x2="25%" y2="50%"></line>
+				<line x1="25%" y1="50%" x2="0" y2="100%"></line>
+				<line x1="25%" y1="50%" x2="0" y2="0"></line>
+			</svg>
+		</div>
+	</div>
+	<div id="needle">
+		<div id="nock">
+			<div id="U1"></div>
+			<div id="U2"></div>
+			<div id="U3"></div>
+			<div id="U4"></div>
+			<div id="U5"></div>
+			<div id="D1"></div>
+			<div id="D2"></div>
+			<div id="D3"></div>
+			<div id="D4"></div>
+			<div id="D5"></div>
+			<svg>
+				<line x1="0" y1="0" x2="15%" y2="50%"></line>
+				<line x1="15%" y1="50%" x2="0" y2="100%"></line>
+				<line x1="0" y1="100%" x2="85%" y2="100%"></line>
+				<line x1="85%" y1="100%" x2="100%" y2="50%"></line>
+				<line x1="100%" y1="50%" x2="85%" y2="0"></line>
+				<line x1="85%" y1="0" x2="0" y2="0"></line>
+				<line x1="12.75%" y1="0" x2="25.5%" y2="50%"></line>
+				<line x1="25.5%" y1="50%" x2="12.75%" y2="100%"></line>
+				<line x1="25.5%" y1="0" x2="38.25%" y2="50%"></line>
+				<line x1="38.25%" y1="50%" x2="25.5%" y2="100%"></line>
+				<line x1="74.5%" y1="0" x2="87.25%" y2="50%"></line>
+				<line x1="87.25%" y1="50%" x2="74.5%" y2="100%"></line>
+				<line x1="61.75%" y1="0" x2="74.5%" y2="50%"></line>
+				<line x1="74.5%" y1="50%" x2="61.75%" y2="100%"></line>
+			</svg>
+		</div>
+		<div id="straight"></div>
+		<div id="open">
+			<svg>
+				<line x1="0" y1="50%" x2="80%" y2="100%"></line>
+				<line x1="0" y1="50%" x2="80%" y2="0"></line>
+			</svg>
+		</div>
+		<div id="close">
+			<svg>
+				<line x1="100%" y1="50%" x2="20%" y2="100%"></line>
+				<line x1="100%" y1="50%" x2="20%" y2="0"></line>
+			</svg>
+		</div>
+		<div id="triangle">
+			<div></div>
+			<svg>
+				<line x1="0" y1="100%" x2="0" y2="0"></line>
+				<line x1="100%" y1="50%" x2="0" y2="100%"></line>
+				<line x1="100%" y1="50%" x2="0" y2="0"></line>
+			</svg>
+		</div>
+		<div id="arrowTip">
+			<div id="arrowTipBase"></div>
+			<div id="arrowTipUp"></div>
+			<div id="arrowTipDown"></div>
+			<svg>
+				<line x1="0" y1="0" x2="100%" y2="50%"></line>
+				<line x1="100%" y1="50%" x2="0" y2="100%"></line>
+				<line x1="0" y1="100%" x2="0" y2="0"></line>
+				<line x1="100%" y1="50%" x2="25%" y2="50%"></line>
+				<line x1="25%" y1="50%" x2="0" y2="100%"></line>
+				<line x1="25%" y1="50%" x2="0" y2="0"></line>
+			</svg>
+		</div>
+	</div>
+	<div id="containerA">
+		<div id="pointA"></div>
+	</div>
+	<div id="containerB">
+		<div id="pointB"></div>
+	</div>
+	<div id="sun">
+		<div id="right"></div>
+		<div id="left"></div>
+	</div>
+	<div id="sun2"></div>
+	<script type="text/javascript">
+
+		// Next code allows compass to rotate 5 times forwards and 3 times backwards
+
+		var needleID = document.getElementById('needle'),
+			pointB = document.getElementById('containerB');
+		needleID.classList.toggle('needleA');
+		pointB.classList.toggle('containerBA');
+		(function() {
+			var onLoop = function() {
+				needleID.classList.toggle('needleA');
+				needleID.classList.toggle('needleB');
+				pointB.classList.toggle('containerBA');
+				pointB.classList.toggle('containerBB');
+			};
+			onLoop();
+			var interval = setInterval(onLoop, 56000);
+		}())
+	</script>
+	<!-- The script below contains calcs to make responsive the compass animation -->
+	<script type="text/javascript" src="js/style.js"></script>
+
+	<!-- Made by Edward Velasco 10-2 -->
+
+</body>
+</html>
